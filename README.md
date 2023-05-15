@@ -1,3 +1,3 @@
 # Wavelet-Transform
 
-Rama de Juan
+Rama de Juan :/
