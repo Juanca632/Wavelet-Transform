@@ -1,5 +1,3 @@
 # Wavelet-Transform
 
-Soy Maqui 
-
-prueba
+Soy Maqui
