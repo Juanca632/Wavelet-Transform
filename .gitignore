@@ -1,3 +1,5 @@
 myenv/
 .env
+.venv/
+.python-version
 
