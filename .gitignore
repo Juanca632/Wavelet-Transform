@@ -1,5 +1,3 @@
-# Entorno virtual de Python (por ejemplo, virtualenv, venv, pyenv)
-venv/
-env/
-.venv/
-.python-version
+myenv/
+.env
+
