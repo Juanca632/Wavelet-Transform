@@ -155,9 +155,18 @@ def inverse_daubechies4_wavelet_transform_2D(daubechies_coeffs, transform_result
 
 
 ################################
-def zeros(image, scale):
+def zeros(image, scale, black_frame="appr"):
     tam_img = image.shape[0] // (2 ** scale)
-    image[:tam_img, :tam_img] = np.zeros((tam_img, tam_img))
+
+    if black_frame == "dH":
+        image[:tam_img, tam_img:2*tam_img] = np.zeros((tam_img, tam_img))
+    elif black_frame == "dV":
+        image[tam_img:2*tam_img, :tam_img] = np.zeros((tam_img, tam_img))
+    elif black_frame == "dD":
+        image[tam_img:2*tam_img, tam_img:2 *
+              tam_img] = np.zeros((tam_img, tam_img))
+    else:
+        image[:tam_img, :tam_img] = np.zeros((tam_img, tam_img))
     return image
 
 
