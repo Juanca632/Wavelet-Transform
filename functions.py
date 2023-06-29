@@ -184,6 +184,50 @@ def verificar_ortonormalidad(v1, v2):
         print("The vectors are similar but they are not orthonormal")
 
 
+def get_details(scale, result_img, normalized):
+    result_img1 = result_img.copy()
+    normalized1 = normalized.copy()
+    result_img2 = result_img.copy()
+    normalized2 = normalized.copy()
+    result_img3 = result_img.copy()
+    normalized3 = normalized.copy()
+
+    result_img1 = zeros(result_img1, scale, black_frame="appr")
+    normalized1 = zeros(normalized1, scale, black_frame="appr")
+    result_img2 = zeros(result_img2, scale, black_frame="appr")
+    normalized2 = zeros(normalized2, scale, black_frame="appr")
+    result_img3 = zeros(result_img3, scale, black_frame="appr")
+    normalized3 = zeros(normalized3, scale, black_frame="appr")
+
+
+    scale_aux = scale
+    while scale_aux >= 1:
+
+        ################### ZERO ADDING ####### dH #############
+        result_img1 = zeros(result_img1, scale_aux, black_frame="dV")
+        result_img1 = zeros(result_img1, scale_aux, black_frame="dD")
+
+        normalized1 = zeros(normalized1, scale_aux, black_frame="dV")
+        normalized1 = zeros(normalized1, scale_aux, black_frame="dD")
+
+        ################### ZERO ADDING ####### dV #############
+        result_img2 = zeros(result_img2, scale_aux, black_frame="dH")
+        result_img2 = zeros(result_img2, scale_aux, black_frame="dD")
+
+        normalized2 = zeros(normalized2, scale_aux, black_frame="dH")
+        normalized2 = zeros(normalized2, scale_aux, black_frame="dD")
+
+        ################### ZERO ADDING ####### dD #############
+        result_img3 = zeros(result_img3, scale_aux, black_frame="dH")
+        result_img3 = zeros(result_img3, scale_aux, black_frame="dV")
+
+        normalized3 = zeros(normalized3, scale_aux, black_frame="dH")
+        normalized3 = zeros(normalized3, scale_aux, black_frame="dV")
+
+        scale_aux -= 1
+    return result_img1, normalized1, result_img2, normalized2, result_img3, normalized3
+
+
 if __name__ == '__main__':
 
     ROOT2, ROOT3 = np.sqrt(2), np.sqrt(3)
